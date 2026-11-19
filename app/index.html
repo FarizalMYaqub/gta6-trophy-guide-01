@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: roadmap to the platinum, missable warnings, cited guides, and a saved checklist.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>Leonida Legend</h1>
+    <p class="lede">Every one of the 55 trophies, with its official name, description and grade, a guide in our own words with its sources, a roadmap to the platinum, and a checklist that saves in your browser. No account, no network, no spoilers unless you ask for them.</p>
+    <div class="progress-wrap" aria-label="Overall progress">
+      <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="grade-stats" id="gradeStats"></div>
+  </div>
+</header>
+
+<main>
+  <section class="panel roadmap" id="roadmapPanel" aria-labelledby="roadmapTitle">
+    <h2 id="roadmapTitle">Roadmap to the platinum</h2>
+    <p class="panel-note">One playthrough is enough. There is no mission replay and no difficulty setting, so keep a manual save at the start of every chapter. Around 200 hours in total, most of it after the story.</p>
+    <ol class="roadmap-list" id="roadmapList"></ol>
+  </section>
+
+  <section class="panel alert" id="missablePanel" aria-labelledby="missableTitle">
+    <h2 id="missableTitle">Missable trophies</h2>
+    <div id="missableList"></div>
+    <p class="panel-note">Everything else can be earned in free roam after the story. Cheats switch trophies off for the session, so keep them off on a trophy run.</p>
+  </section>
+
+  <section class="toolbar" aria-label="Tracker controls">
+    <label class="search-box">Search <input id="search" type="search" placeholder="Trophy name or keyword" autocomplete="off"></label>
+    <label>Kind
+      <select id="kindFilter">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="side">Side quests</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="crime">Crime &amp; heists</option>
+        <option value="completion">100% completion</option>
+        <option value="misc">Odd ones out</option>
+        <option value="online">Online</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="statusFilter">
+        <option value="all">Earned + unearned</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Unearned only</option>
+      </select>
+    </label>
+    <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+    <div class="toolbar-buttons">
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button">Reset</button>
+    </div>
+  </section>
+  <p class="count-line" id="countLine"></p>
+
+  <section class="trophy-list" id="trophyList" aria-live="polite"></section>
+
+  <section class="panel sources-note" aria-labelledby="sourcesTitle">
+    <h2 id="sourcesTitle">Where the facts come from</h2>
+    <p>Names, descriptions and grades are the official list as PlayStation publishes it, as listed by Exophase and PSNProfiles on 18 Nov 2026. Every guide above is written in our own words for this entry; the counts, locations and steps draw on the GTABase trophy guide, the Press-Start list, OutputLag and EGamers, each cited beside the trophy it supports. Where a trigger is not yet confirmed at launch, the guide says so instead of guessing.</p>
+    <p class="fineprint">Unofficial fan guide. Not affiliated with Rockstar Games or Sony Interactive Entertainment. No logos, artwork or screenshots from the game are used here.</p>
+  </section>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
