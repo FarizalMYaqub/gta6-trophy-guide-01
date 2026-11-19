@@ -15,6 +15,7 @@
   --bronze: #e09a6a;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--ink);
@@ -22,6 +23,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
 .masthead {
   background: linear-gradient(160deg, #2b1155 0%, #7a1e5c 45%, #c94f3d 78%, #e8863a 100%);
   padding: 40px 20px 28px;
@@ -40,6 +42,20 @@ h1 { margin: 0 0 8px; font-size: 52px; line-height: 1.02; letter-spacing: -0.02e
   border-radius: 999px; padding: 5px 12px; font-size: 13px; font-weight: 600;
 }
 .grade-chip b { color: var(--amber); }
+.missable-chip { border-color: var(--sunset); color: #ffd9c2; }
+.next-up {
+  max-width: 760px; margin: 16px 0 0; padding: 10px 14px;
+  background: rgba(0,0,0,.32); border: 1px solid rgba(255,255,255,.22);
+  border-radius: 10px; font-size: 14px;
+}
+.next-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amber); margin-right: 8px;
+}
+.next-jump {
+  margin-left: 10px; padding: 4px 10px; font-size: 12px;
+  background: var(--amber); color: #2a1a00;
+}
 main { max-width: 1080px; margin: 0 auto; padding: 24px 20px 48px; }
 .panel {
   background: var(--card); border: 1px solid var(--line); border-radius: 14px;
@@ -53,12 +69,15 @@ main { max-width: 1080px; margin: 0 auto; padding: 24px 20px 48px; }
 .roadmap-list h3 { margin: 2px 0 4px; font-size: 16px; }
 .roadmap-list p { margin: 0; font-size: 14px; color: var(--muted); }
 .roadmap-list p b { color: var(--text); }
+.roadmap-bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; margin-top: 10px; }
+.roadmap-fill { height: 100%; background: var(--teal); transition: width .3s ease; }
 .alert { border-color: #7a3a1e; background: #2a1a2e; }
 .alert h2 { color: var(--amber); }
 .missable-item { border-left: 4px solid var(--sunset); padding: 2px 0 2px 12px; margin-bottom: 8px; }
 .missable-item strong { color: var(--sunset); }
 .missable-item p { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
 .toolbar {
+  position: sticky; top: 0; z-index: 10;
   display: flex; flex-wrap: wrap; gap: 10px; align-items: end;
   background: var(--ink-2); border: 1px solid var(--line); border-radius: 14px;
   padding: 14px 16px; margin-bottom: 8px;
@@ -112,9 +131,12 @@ button:hover, .import-btn:hover { filter: brightness(1.12); }
 .trophy-detail { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
 .trophy-detail h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); }
 .trophy-detail p { margin: 0 0 10px; font-size: 15px; }
+.trophy-steps { margin: 0 0 10px; padding-left: 20px; font-size: 14px; color: var(--text); }
+.trophy-steps li { margin-bottom: 3px; }
 .trophy-detail .missable-note { background: #2a1a2e; border-left: 4px solid var(--sunset); padding: 8px 12px; border-radius: 0 8px 8px 0; font-size: 14px; }
 .trophy-sources { font-size: 13px; color: var(--muted); }
 .trophy-sources a { color: var(--teal); }
+.copy-btn { background: var(--card); border: 1px solid var(--line); color: var(--text); padding: 6px 12px; font-size: 13px; }
 .empty { color: var(--muted); padding: 28px; text-align: center; background: var(--card); border: 1px dashed var(--line); border-radius: 12px; }
 .sources-note p { font-size: 14px; color: var(--muted); }
 .fineprint { font-size: 12px !important; }
@@ -123,4 +145,10 @@ button:hover, .import-btn:hover { filter: brightness(1.12); }
   h1 { font-size: 36px; }
   .roadmap-list { grid-template-columns: 1fr; }
   .toolbar-buttons { margin-left: 0; }
+  .toolbar { position: static; }
+}
+@media print {
+  .toolbar, .next-jump, .copy-btn { display: none; }
+  body { background: #fff; color: #111; }
+  .trophy, .panel { break-inside: avoid; }
 }

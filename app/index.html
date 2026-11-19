@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leonida Legend — GTA 6 Trophy Guide &amp; Tracker</title>
-<meta name="description" content="Offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: roadmap to the platinum, missable warnings, cited guides, and a saved checklist.">
+<meta name="description" content="Offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: roadmap to the platinum, missable warnings, step-by-step cited guides, and a saved checklist.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,19 +12,20 @@
   <div class="masthead-inner">
     <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
     <h1>Leonida Legend</h1>
-    <p class="lede">Every one of the 55 trophies, with its official name, description and grade, a guide in our own words with its sources, a roadmap to the platinum, and a checklist that saves in your browser. No account, no network, no spoilers unless you ask for them.</p>
+    <p class="lede">Every one of the 55 trophies, with its official name, description and grade, a guide in our own words with its sources and steps, a roadmap to the platinum, and a checklist that saves in your browser. No account, no network, no spoilers unless you ask for them.</p>
     <div class="progress-wrap" aria-label="Overall progress">
       <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
       <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
     </div>
     <div class="grade-stats" id="gradeStats"></div>
+    <p class="next-up" id="nextUp"></p>
   </div>
 </header>
 
 <main>
   <section class="panel roadmap" id="roadmapPanel" aria-labelledby="roadmapTitle">
     <h2 id="roadmapTitle">Roadmap to the platinum</h2>
-    <p class="panel-note">One playthrough is enough. There is no mission replay and no difficulty setting, so keep a manual save at the start of every chapter. Around 200 hours in total, most of it after the story.</p>
+    <p class="panel-note">One playthrough is enough. There is no mission replay and no difficulty setting, so keep a manual save at the start of every chapter. Around 200 hours in total, most of it after the story. Each stage below shows how many of its trophies you have earned.</p>
     <ol class="roadmap-list" id="roadmapList"></ol>
   </section>
 
@@ -35,7 +36,7 @@
   </section>
 
   <section class="toolbar" aria-label="Tracker controls">
-    <label class="search-box">Search <input id="search" type="search" placeholder="Trophy name or keyword" autocomplete="off"></label>
+    <label class="search-box">Search <input id="search" type="search" placeholder="Trophy name or keyword — press /" autocomplete="off"></label>
     <label>Kind
       <select id="kindFilter">
         <option value="all">All kinds</option>
@@ -64,6 +65,13 @@
         <option value="all">Earned + unearned</option>
         <option value="earned">Earned only</option>
         <option value="unearned">Unearned only</option>
+      </select>
+    </label>
+    <label>Sort
+      <select id="sortOrder">
+        <option value="roadmap">Roadmap order</option>
+        <option value="name">Name A–Z</option>
+        <option value="grade">Grade (best first)</option>
       </select>
     </label>
     <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
